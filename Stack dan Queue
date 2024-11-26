@@ -1,0 +1,69 @@
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+        else:
+            raise IndexError("pop dari stack kosong")
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+        else:
+            raise IndexError("peek dari stack kosong")
+
+    def size(self):
+        return len(self.items)
+
+# Contoh penggunaan
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+print("Stack setelah push: ", stack.items)
+print("Pop: ", stack.pop())
+print("Stack setelah pop: ", stack.items) 
+
+
+
+class Queue:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def enqueue(self, item):
+        self.items.append(item)
+
+    def dequeue(self):
+        if not self.is_empty():
+            return self.items.pop(0)
+        else:
+            raise IndexError("dequeue dari queue kosong")
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[0]
+        else:
+            raise IndexError("peek dari queue kosong")
+
+    def size(self):
+        return len(self.items)
+
+# Contoh penggunaan
+queue = Queue()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+print("Queue setelah enqueue: ", queue.items)
+print("Dequeue: ", queue.dequeue())
+print("Queue setelah dequeue: ", queue.items)
